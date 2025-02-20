@@ -5,7 +5,7 @@ class EgyptianRatScrew {
         this.p2Deck = this.deck.slice(26);
         this.pile = [];
         this.chanceCount = 0;
-        this.currentPlayer = 1; // Player 1 starts a new game
+        this.currentPlayer = 1;
         this.faceCardActive = false;
 
         this.flipSound = new Audio('sounds/flip.wav');
@@ -27,13 +27,11 @@ class EgyptianRatScrew {
         console.log('p1Flip:', this.p1Flip);
         console.log('p2Flip:', this.p2Flip);
 
-        // Initial state
         this.p1Pile.style.backgroundImage = 'url(playing_card_images/back_of_card.png)';
         this.p2Pile.style.backgroundImage = 'url(playing_card_images/back_of_card.png)';
         this.middlePile.style.backgroundImage = 'none';
         this.updateTurnIndicator();
 
-        // Add event listeners with logging
         this.p1Flip.addEventListener('click', () => {
             console.log('Player 1 Flip clicked');
             this.playTurn(1);
@@ -166,7 +164,7 @@ class EgyptianRatScrew {
 
     showCountdown() {
         this.countdown.style.display = 'block';
-        this.countdown.textContent = `Chances left: ${this.chanceCount}`;
+        this.countdown.textContent = `Player ${this.currentPlayer} chances left: ${this.chanceCount}`;
     }
 
     checkGameOver() {

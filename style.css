@@ -1,47 +1,62 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Full viewport height */
+    width: 100vw; /* Full viewport width */
+    overflow: hidden; /* Prevent scrolling */
+}
+
 .game {
     text-align: center;
     font-family: Arial, sans-serif;
-    padding: 20px;
+    padding: 1vh; /* Relative padding */
+    height: 100vh; /* Fill screen height */
+    width: 100vw; /* Fill screen width */
+    box-sizing: border-box; /* Include padding in dimensions */
 }
 
 .scores {
-    margin: 20px;
-    font-size: 1.2em;
+    margin: 2vh 0;
+    font-size: 1.5em; /* Slightly larger, scales with screen */
 }
 
 #p1-score-box, #p2-score-box {
-    padding: 5px 10px;
-    margin: 0 10px;
+    padding: 0.5vh 1vw;
+    margin: 0 1vw;
     transition: background-color 0.3s;
 }
 
 #p1-score-box.active {
-    background-color: #90ee90; /* Light green for Player 1's turn */
+    background-color: #90ee90;
 }
 
 #p2-score-box.active {
-    background-color: #add8e6; /* Light blue for Player 2's turn */
+    background-color: #add8e6;
 }
 
 .table {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin: 20px auto;
-    width: 600px;
-    height: 500px;
+    margin: 2vh auto;
+    width: 80vw; /* 80% of viewport width */
+    height: 65vh; /* 65% of viewport height, more square-like */
+    max-width: 1000px; /* Cap for very large screens */
+    max-height: 800px; /* Cap for very large screens */
     background-image: url('other_images/table.png');
     background-size: cover;
     background-position: center;
     border: 2px solid #333;
     border-radius: 10px;
     position: relative;
-    padding: 20px;
+    padding: 2vh;
 }
 
 .pile {
-    width: 100px;
-    height: 150px;
+    width: 10vw; /* Scale with viewport */
+    height: 15vw; /* Maintain aspect ratio */
+    max-width: 150px; /* Cap size */
+    max-height: 225px; /* Cap size */
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -57,30 +72,30 @@
 }
 
 .controls {
-    margin: 20px;
+    margin: 2vh 0;
 }
 
 button {
-    padding: 10px 20px;
-    margin: 0 10px;
-    font-size: 1em;
+    padding: 1.5vh 3vw; /* Larger padding, scales with viewport */
+    margin: 0 1vw;
+    font-size: 1.5em; /* Larger text */
     cursor: pointer;
-    display: none; /* Hidden by default */
+    display: none;
 }
 
 button.active {
-    display: inline-block !important; /* Force visibility */
+    display: inline-block !important;
 }
 
 #message {
-    margin-top: 20px;
-    font-size: 1.2em;
+    margin-top: 2vh;
+    font-size: 1.5em;
     color: #ff0000;
 }
 
 #countdown {
-    margin-top: 10px;
-    font-size: 1.5em;
+    margin-top: 1vh;
+    font-size: 1.8em; /* Slightly larger for emphasis */
     font-weight: bold;
     color: #ff4500;
 }
